@@ -1,1 +1,1 @@
-# juego-lucha-patrones2
+![Java CI](https://github.com/Leonardo-909/juego-lucha-patrones2/actions/workflows/ci.yml/badge.svg)
