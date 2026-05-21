@@ -1,0 +1,9 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+juego-lucha,com.juego.patrones.strategy,AtaqueNormal,0,17,0,0,0,4,0,3,0,3
+juego-lucha,com.juego.patrones.strategy,AtaqueFuerte,0,17,0,0,0,4,0,3,0,3
+juego-lucha,com.juego.patrones.strategy,AtaqueMagico,0,7,0,0,0,3,0,3,0,3
+juego-lucha,com.juego.patrones.decorator,ArmaDecorator,0,26,0,0,0,8,0,3,0,3
+juego-lucha,com.juego.patrones.decorator,EscudoDecorator,0,29,0,0,0,8,0,3,0,3
+juego-lucha,com.juego.model,PersonajeBase,0,78,0,6,0,24,0,11,0,8
+juego-lucha,com.juego.model,PersonajeDecorator,4,24,0,0,1,9,1,5,1,5
+juego-lucha,com.juego.juego,JuegoLucha,70,80,2,6,16,19,3,5,1,3

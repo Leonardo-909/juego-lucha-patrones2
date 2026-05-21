@@ -1,7 +1,7 @@
 /workspaces/juego-lucha-patrones2/src/main/java/com/juego/juego/JuegoLucha.java
 /workspaces/juego-lucha-patrones2/src/main/java/com/juego/model/IPersonaje.java
-/workspaces/juego-lucha-patrones2/src/main/java/com/juego/model/PersoanjeBase.java
-/workspaces/juego-lucha-patrones2/src/main/java/com/juego/model/PersoanjeDecorator.java
+/workspaces/juego-lucha-patrones2/src/main/java/com/juego/model/PersonajeBase.java
+/workspaces/juego-lucha-patrones2/src/main/java/com/juego/model/PersonajeDecorator.java
 /workspaces/juego-lucha-patrones2/src/main/java/com/juego/patrones/decorator/ArmaDecorator.java
 /workspaces/juego-lucha-patrones2/src/main/java/com/juego/patrones/decorator/EscudoDecorator.java
 /workspaces/juego-lucha-patrones2/src/main/java/com/juego/patrones/strategy/AtaqueFuerte.java

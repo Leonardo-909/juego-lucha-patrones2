@@ -2,10 +2,8 @@ package com.juego.model;
 
 import com.juego.patrones.strategy.AtaqueFuerte;
 import com.juego.patrones.strategy.AtaqueMagico;
-import com.juego.patrones.strategy.AtaqueNormal;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.*;
 
 @DisplayName("Pruebas de PersonajeBase")
 class PersonajeBaseTest {

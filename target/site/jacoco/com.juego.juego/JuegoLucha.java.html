@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>JuegoLucha.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">juego-lucha</a> &gt; <a href="index.source.html" class="el_package">com.juego.juego</a> &gt; <span class="el_source">JuegoLucha.java</span></div><h1>JuegoLucha.java</h1><pre class="source lang-java linenums">package com.juego.juego;
+
+import com.juego.model.IPersonaje;
+import com.juego.model.PersonajeBase;
+import com.juego.patrones.decorator.ArmaDecorator;
+import com.juego.patrones.decorator.EscudoDecorator;
+import com.juego.patrones.strategy.AtaqueFuerte;
+import com.juego.patrones.strategy.AtaqueMagico;
+import java.util.Scanner;
+
+public class JuegoLucha {
+    private IPersonaje jugador1;
+    private IPersonaje jugador2;
+
+<span class="fc" id="L15">    public JuegoLucha(IPersonaje j1, IPersonaje j2) {</span>
+<span class="fc" id="L16">        this.jugador1 = j1;</span>
+<span class="fc" id="L17">        this.jugador2 = j2;</span>
+<span class="fc" id="L18">    }</span>
+
+    public void iniciarPelea() {
+<span class="fc" id="L21">        System.out.println(&quot;\n=== INICIO DE LA PELEA ===&quot;);</span>
+<span class="fc" id="L22">        System.out.println(jugador1.getNombre() + &quot; vs &quot; + jugador2.getNombre() + &quot;\n&quot;);</span>
+
+<span class="pc bpc" id="L24" title="1 of 4 branches missed.">        while (jugador1.estaVivo() &amp;&amp; jugador2.estaVivo()) {</span>
+<span class="fc" id="L25">            turno(jugador1, jugador2);</span>
+<span class="fc bfc" id="L26" title="All 2 branches covered.">            if (jugador2.estaVivo()) {</span>
+<span class="fc" id="L27">                turno(jugador2, jugador1);</span>
+            }
+        }
+
+<span class="fc" id="L31">        System.out.println(&quot;\n=== FIN DE LA PELEA ===&quot;);</span>
+<span class="pc bpc" id="L32" title="1 of 2 branches missed.">        if (jugador1.estaVivo()) {</span>
+<span class="fc" id="L33">            System.out.println(&quot;Ganador: &quot; + jugador1.getNombre());</span>
+        } else {
+<span class="nc" id="L35">            System.out.println(&quot;Ganador: &quot; + jugador2.getNombre());</span>
+        }
+<span class="fc" id="L37">    }</span>
+
+    private void turno(IPersonaje atacante, IPersonaje defensor) {
+<span class="fc" id="L40">        System.out.println(&quot;\n--- Turno de &quot; + atacante.getNombre() + &quot; ---&quot;);</span>
+<span class="fc" id="L41">        System.out.println(&quot;HP defensor: &quot; + defensor.getPuntosDeVida());</span>
+<span class="fc" id="L42">        atacante.atacar(defensor);</span>
+<span class="fc" id="L43">        System.out.println(&quot;HP restante: &quot; + defensor.getPuntosDeVida());</span>
+<span class="fc" id="L44">    }</span>
+
+    public static void main(String[] args) {
+<span class="nc" id="L47">        Scanner scanner = new Scanner(System.in);</span>
+
+<span class="nc" id="L49">        System.out.print(&quot;Nombre del jugador 1: &quot;);</span>
+<span class="nc" id="L50">        String nombre1 = scanner.nextLine();</span>
+<span class="nc" id="L51">        System.out.print(&quot;Nombre del jugador 2: &quot;);</span>
+<span class="nc" id="L52">        String nombre2 = scanner.nextLine();</span>
+
+        // Patron Strategy: cada personaje tiene diferente tipo de ataque
+<span class="nc" id="L55">        IPersonaje j1 = new PersonajeBase(nombre1, new AtaqueFuerte());</span>
+<span class="nc" id="L56">        IPersonaje j2 = new PersonajeBase(nombre2, new AtaqueMagico());</span>
+
+        // Patron Decorator: se agregan capacidades sin modificar las clases base
+<span class="nc" id="L59">        System.out.println(&quot;\n&quot; + nombre1 + &quot; encontro una espada magica!&quot;);</span>
+<span class="nc" id="L60">        j1 = new ArmaDecorator(j1, 15);</span>
+
+<span class="nc" id="L62">        System.out.println(nombre2 + &quot; encontro un escudo!&quot;);</span>
+<span class="nc" id="L63">        j2 = new EscudoDecorator(j2, 5);</span>
+
+<span class="nc" id="L65">        JuegoLucha juego = new JuegoLucha(j1, j2);</span>
+<span class="nc" id="L66">        juego.iniciarPelea();</span>
+
+<span class="nc" id="L68">        scanner.close();</span>
+<span class="nc" id="L69">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.9.202303310957</span></div></body></html>

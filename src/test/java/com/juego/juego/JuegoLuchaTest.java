@@ -5,7 +5,6 @@ import com.juego.model.PersonajeBase;
 import com.juego.patrones.strategy.AtaqueMagico;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.*;
 
 @DisplayName("Pruebas de JuegoLucha")
 class JuegoLuchaTest {
