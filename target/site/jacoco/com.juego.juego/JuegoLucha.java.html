@@ -12,36 +12,36 @@ public class JuegoLucha {
     private IPersonaje jugador1;
     private IPersonaje jugador2;
 
-<span class="fc" id="L15">    public JuegoLucha(IPersonaje j1, IPersonaje j2) {</span>
-<span class="fc" id="L16">        this.jugador1 = j1;</span>
-<span class="fc" id="L17">        this.jugador2 = j2;</span>
-<span class="fc" id="L18">    }</span>
+<span class="nc" id="L15">    public JuegoLucha(IPersonaje j1, IPersonaje j2) {</span>
+<span class="nc" id="L16">        this.jugador1 = j1;</span>
+<span class="nc" id="L17">        this.jugador2 = j2;</span>
+<span class="nc" id="L18">    }</span>
 
     public void iniciarPelea() {
-<span class="fc" id="L21">        System.out.println(&quot;\n=== INICIO DE LA PELEA ===&quot;);</span>
-<span class="fc" id="L22">        System.out.println(jugador1.getNombre() + &quot; vs &quot; + jugador2.getNombre() + &quot;\n&quot;);</span>
+<span class="nc" id="L21">        System.out.println(&quot;\n=== INICIO DE LA PELEA ===&quot;);</span>
+<span class="nc" id="L22">        System.out.println(jugador1.getNombre() + &quot; vs &quot; + jugador2.getNombre() + &quot;\n&quot;);</span>
 
-<span class="pc bpc" id="L24" title="1 of 4 branches missed.">        while (jugador1.estaVivo() &amp;&amp; jugador2.estaVivo()) {</span>
-<span class="fc" id="L25">            turno(jugador1, jugador2);</span>
-<span class="fc bfc" id="L26" title="All 2 branches covered.">            if (jugador2.estaVivo()) {</span>
-<span class="fc" id="L27">                turno(jugador2, jugador1);</span>
+<span class="nc bnc" id="L24" title="All 4 branches missed.">        while (jugador1.estaVivo() &amp;&amp; jugador2.estaVivo()) {</span>
+<span class="nc" id="L25">            turno(jugador1, jugador2);</span>
+<span class="nc bnc" id="L26" title="All 2 branches missed.">            if (jugador2.estaVivo()) {</span>
+<span class="nc" id="L27">                turno(jugador2, jugador1);</span>
             }
         }
 
-<span class="fc" id="L31">        System.out.println(&quot;\n=== FIN DE LA PELEA ===&quot;);</span>
-<span class="pc bpc" id="L32" title="1 of 2 branches missed.">        if (jugador1.estaVivo()) {</span>
-<span class="fc" id="L33">            System.out.println(&quot;Ganador: &quot; + jugador1.getNombre());</span>
-        } else {
+<span class="nc" id="L31">        System.out.println(&quot;\n=== FIN DE LA PELEA ===&quot;);</span>
+<span class="nc bnc" id="L32" title="All 2 branches missed.">        if (jugador1.estaVivo()) {</span>
+<span class="nc" id="L33">            System.out.println(&quot;Ganador: &quot; + jugador1.getNombre());</span>
+<span class="nc" id="L34">        } else {</span>
 <span class="nc" id="L35">            System.out.println(&quot;Ganador: &quot; + jugador2.getNombre());</span>
         }
-<span class="fc" id="L37">    }</span>
+<span class="nc" id="L37">    }</span>
 
     private void turno(IPersonaje atacante, IPersonaje defensor) {
-<span class="fc" id="L40">        System.out.println(&quot;\n--- Turno de &quot; + atacante.getNombre() + &quot; ---&quot;);</span>
-<span class="fc" id="L41">        System.out.println(&quot;HP defensor: &quot; + defensor.getPuntosDeVida());</span>
-<span class="fc" id="L42">        atacante.atacar(defensor);</span>
-<span class="fc" id="L43">        System.out.println(&quot;HP restante: &quot; + defensor.getPuntosDeVida());</span>
-<span class="fc" id="L44">    }</span>
+<span class="nc" id="L40">        System.out.println(&quot;\n--- Turno de &quot; + atacante.getNombre() + &quot; ---&quot;);</span>
+<span class="nc" id="L41">        System.out.println(&quot;HP defensor: &quot; + defensor.getPuntosDeVida());</span>
+<span class="nc" id="L42">        atacante.atacar(defensor);</span>
+<span class="nc" id="L43">        System.out.println(&quot;HP restante: &quot; + defensor.getPuntosDeVida());</span>
+<span class="nc" id="L44">    }</span>
 
     public static void main(String[] args) {
 <span class="nc" id="L47">        Scanner scanner = new Scanner(System.in);</span>

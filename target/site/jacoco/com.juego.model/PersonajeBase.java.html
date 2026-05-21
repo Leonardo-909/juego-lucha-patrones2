@@ -8,47 +8,47 @@ public class PersonajeBase implements IPersonaje {
     private int puntosDeVida;
     private AtaqueStrategy estrategiaAtaque;
 
-<span class="fc" id="L11">    public PersonajeBase(String nombre) {</span>
-<span class="fc" id="L12">        this.nombre = nombre;</span>
-<span class="fc" id="L13">        this.puntosDeVida = 100;</span>
-<span class="fc" id="L14">        this.estrategiaAtaque = new AtaqueNormal();</span>
-<span class="fc" id="L15">    }</span>
+<span class="nc" id="L11">    public PersonajeBase(String nombre) {</span>
+<span class="nc" id="L12">        this.nombre = nombre;</span>
+<span class="nc" id="L13">        this.puntosDeVida = 100;</span>
+<span class="nc" id="L14">        this.estrategiaAtaque = new AtaqueNormal();</span>
+<span class="nc" id="L15">    }</span>
 
     // Constructor que acepta estrategia personalizada (patron Strategy)
-<span class="fc" id="L18">    public PersonajeBase(String nombre, AtaqueStrategy estrategia) {</span>
-<span class="fc" id="L19">        this.nombre = nombre;</span>
-<span class="fc" id="L20">        this.puntosDeVida = 100;</span>
-<span class="fc" id="L21">        this.estrategiaAtaque = estrategia;</span>
-<span class="fc" id="L22">    }</span>
+<span class="nc" id="L18">    public PersonajeBase(String nombre, AtaqueStrategy estrategia) {</span>
+<span class="nc" id="L19">        this.nombre = nombre;</span>
+<span class="nc" id="L20">        this.puntosDeVida = 100;</span>
+<span class="nc" id="L21">        this.estrategiaAtaque = estrategia;</span>
+<span class="nc" id="L22">    }</span>
 
     // Permite cambiar la estrategia en tiempo de ejecucion
     public void setEstrategiaAtaque(AtaqueStrategy estrategia) {
-<span class="fc" id="L26">        this.estrategiaAtaque = estrategia;</span>
-<span class="fc" id="L27">    }</span>
+<span class="nc" id="L26">        this.estrategiaAtaque = estrategia;</span>
+<span class="nc" id="L27">    }</span>
 
     @Override
     public void atacar(IPersonaje oponente) {
-<span class="fc" id="L31">        int dano = estrategiaAtaque.calcularDano();</span>
-<span class="fc" id="L32">        System.out.println(nombre + &quot; usa &quot; + estrategiaAtaque.descripcion()</span>
-<span class="fc" id="L33">            + &quot; contra &quot; + oponente.getNombre()</span>
-            + &quot; causando &quot; + dano + &quot; puntos de dano.&quot;);
-<span class="fc" id="L35">        oponente.recibirDano(dano);</span>
-<span class="fc" id="L36">    }</span>
+<span class="nc" id="L31">        int dano = estrategiaAtaque.calcularDano();</span>
+<span class="nc" id="L32">        System.out.println(nombre + &quot; usa &quot; + estrategiaAtaque.descripcion()</span>
+<span class="nc" id="L33">            + &quot; contra &quot; + oponente.getNombre()</span>
+<span class="nc" id="L34">            + &quot; causando &quot; + dano + &quot; puntos de dano.&quot;);</span>
+<span class="nc" id="L35">        oponente.recibirDano(dano);</span>
+<span class="nc" id="L36">    }</span>
 
     @Override
     public void recibirDano(int dano) {
-<span class="fc bfc" id="L40" title="All 2 branches covered.">        if (dano &lt; 0) return;</span>
-<span class="fc" id="L41">        this.puntosDeVida -= dano;</span>
-<span class="fc bfc" id="L42" title="All 2 branches covered.">        if (this.puntosDeVida &lt; 0) this.puntosDeVida = 0;</span>
-<span class="fc" id="L43">    }</span>
+<span class="nc bnc" id="L40" title="All 2 branches missed.">        if (dano &lt; 0) return;</span>
+<span class="nc" id="L41">        this.puntosDeVida -= dano;</span>
+<span class="nc bnc" id="L42" title="All 2 branches missed.">        if (this.puntosDeVida &lt; 0) this.puntosDeVida = 0;</span>
+<span class="nc" id="L43">    }</span>
 
     @Override
-<span class="fc bfc" id="L46" title="All 2 branches covered.">    public boolean estaVivo() { return puntosDeVida &gt; 0; }</span>
+<span class="nc bnc" id="L46" title="All 2 branches missed.">    public boolean estaVivo() { return puntosDeVida &gt; 0; }</span>
 
     @Override
-<span class="fc" id="L49">    public String getNombre() { return nombre; }</span>
+<span class="nc" id="L49">    public String getNombre() { return nombre; }</span>
 
     @Override
-<span class="fc" id="L52">    public int getPuntosDeVida() { return puntosDeVida; }</span>
+<span class="nc" id="L52">    public int getPuntosDeVida() { return puntosDeVida; }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.9.202303310957</span></div></body></html>

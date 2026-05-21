@@ -3,27 +3,27 @@
 public abstract class PersonajeDecorator implements IPersonaje {
     protected IPersonaje personajeWrappeado;
 
-<span class="fc" id="L6">    public PersonajeDecorator(IPersonaje personaje) {</span>
-<span class="fc" id="L7">        this.personajeWrappeado = personaje;</span>
-<span class="fc" id="L8">    }</span>
+<span class="nc" id="L6">    public PersonajeDecorator(IPersonaje personaje) {</span>
+<span class="nc" id="L7">        this.personajeWrappeado = personaje;</span>
+<span class="nc" id="L8">    }</span>
 
     @Override
     public void atacar(IPersonaje oponente) {
-<span class="fc" id="L12">        personajeWrappeado.atacar(oponente);</span>
-<span class="fc" id="L13">    }</span>
+<span class="nc" id="L12">        personajeWrappeado.atacar(oponente);</span>
+<span class="nc" id="L13">    }</span>
 
     @Override
     public void recibirDano(int dano) {
-<span class="fc" id="L17">        personajeWrappeado.recibirDano(dano);</span>
-<span class="fc" id="L18">    }</span>
+<span class="nc" id="L17">        personajeWrappeado.recibirDano(dano);</span>
+<span class="nc" id="L18">    }</span>
 
     @Override
 <span class="nc" id="L21">    public boolean estaVivo() { return personajeWrappeado.estaVivo(); }</span>
 
     @Override
-<span class="fc" id="L24">    public String getNombre() { return personajeWrappeado.getNombre(); }</span>
+<span class="nc" id="L24">    public String getNombre() { return personajeWrappeado.getNombre(); }</span>
 
     @Override
-<span class="fc" id="L27">    public int getPuntosDeVida() { return personajeWrappeado.getPuntosDeVida(); }</span>
+<span class="nc" id="L27">    public int getPuntosDeVida() { return personajeWrappeado.getPuntosDeVida(); }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.9.202303310957</span></div></body></html>

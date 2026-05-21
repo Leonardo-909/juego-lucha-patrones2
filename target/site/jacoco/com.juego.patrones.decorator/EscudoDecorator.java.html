@@ -7,21 +7,21 @@ public class EscudoDecorator extends PersonajeDecorator {
     private int reduccionDano;
 
     public EscudoDecorator(IPersonaje personaje, int reduccionDano) {
-<span class="fc" id="L10">        super(personaje);</span>
-<span class="fc" id="L11">        this.reduccionDano = reduccionDano;</span>
-<span class="fc" id="L12">    }</span>
+<span class="nc" id="L10">        super(personaje);</span>
+<span class="nc" id="L11">        this.reduccionDano = reduccionDano;</span>
+<span class="nc" id="L12">    }</span>
 
     @Override
     public void recibirDano(int dano) {
-<span class="fc" id="L16">        int danoReducido = Math.max(0, dano - reduccionDano);</span>
-<span class="fc" id="L17">        System.out.println(getNombre() + &quot; bloquea &quot; + reduccionDano</span>
+<span class="nc" id="L16">        int danoReducido = Math.max(0, dano - reduccionDano);</span>
+<span class="nc" id="L17">        System.out.println(getNombre() + &quot; bloquea &quot; + reduccionDano</span>
             + &quot; puntos de dano con su escudo!&quot;);
-<span class="fc" id="L19">        super.recibirDano(danoReducido);</span>
-<span class="fc" id="L20">    }</span>
+<span class="nc" id="L19">        super.recibirDano(danoReducido);</span>
+<span class="nc" id="L20">    }</span>
 
     @Override
     public String getNombre() {
-<span class="fc" id="L24">        return super.getNombre() + &quot; (con Escudo)&quot;;</span>
+<span class="nc" id="L24">        return super.getNombre() + &quot; (con Escudo)&quot;;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.9.202303310957</span></div></body></html>
